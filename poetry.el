@@ -879,7 +879,7 @@ If OPT is non-nil, set an optional dep."
 (defun poetry-find-project-root ()
   "Return the poetry project root if any."
   (or poetry-project-root
-      (when-let* ((root (locate-dominating-file default-directory "pyproject.toml"))
+      (when-let* ((root (locate-dominating-file default-directory "poetry.lock"))
                   (pyproject-contents
                    (with-temp-buffer
                      (insert-file-contents-literally (concat (file-name-as-directory root) "pyproject.toml"))
